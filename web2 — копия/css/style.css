@@ -1,0 +1,280 @@
+:root {
+    --black-color: var(--black-color);
+    --white-color: var(--white-color)
+}
+
+li {
+    list-style: none;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Anonymous Pro", monospace;
+    text-decoration: none;
+}
+
+.header-link {
+    color: var(--black-color);
+    text-decoration: none;
+
+}
+
+body {
+    max-height: 100vh;
+    background: #F1F1F1;
+}
+
+.container {
+    max-width: 1162px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.header {
+    background-color: white;
+    border-bottom: 1px solid #A1A6B4;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0 16px;
+}
+
+.header-nav-list {
+    display: flex;
+    justify-content: space-between;
+    width: 262px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.main {
+    background-color: #F1F1F1;
+}
+
+.main-container {
+    padding: 25px 0;
+}
+
+h1 {
+    font-family: "Anonymous Pro", sans-serif;
+    color: var(--black-color);
+    font-size: clamp(32px, 10vw, 48px);
+    font-weight: 700;
+    line-height: 48px;
+}
+
+.card-wrapper {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+.card {
+    width: 371px;
+    border-radius: 12px;
+    overflow: hidden;
+    height: fit-content;
+}
+
+img {
+    width: 100%;
+}
+
+.card_img-wrapper {
+    background-color: white;
+    height: 254px;
+}
+
+.card-footer {
+    padding: 36px 24px;
+    border-radius: 0px 0px 12px 12px;
+    background: white;
+}
+
+.card-title {
+    color: black;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 26px;
+}
+
+.card-text {
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+.footer {
+    background: #121723;
+}
+
+.footer-container {
+    padding: 32px 0;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #E6E8EC66;
+}
+
+.footer-link {
+    color: white;
+    text-decoration: none;
+}
+
+.footer-nav-list {
+    display: flex;
+    justify-content: space-between;
+    width: 262px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.footer-container-bottom {
+    padding: 18px 0 21px;
+}
+
+.footer-text {
+    font-size: 16px;
+    font-weight: 700;
+    color: #A1A6B4;
+    text-align: center;
+}
+
+/*большая карточка*/
+
+.card-big {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    padding: 48px;
+    border-radius: 50px;
+}
+
+.card_img-wrapper-big {
+    background-color: white;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.cross-info {
+    padding: 48px;
+    border-radius: 50px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.cross-info_title {
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 400;
+    text-align: left;
+}
+
+.cross-info_sub-title {
+    font-size: clamp(20px, 5vw, 36px);
+    font-weight: 400;
+    line-height: 36px;
+    text-align: left;
+}
+
+.cross-history {
+    display: flex;
+    justify-content: space-between;
+}
+
+.cross-history_text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-size: clamp(16px, 3vw, 20px);
+    line-height: 28px;
+}
+
+.card-table {
+    width: 50%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 0;
+    border-bottom: 1px solid #121723;
+    font-size: clamp(16px, 3vw, 20px);
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+
+h3 {
+    font-size: clamp(24px,5vw,30px);
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+}
+
+
+/*анимации*/
+
+.card:hover {
+    animation-name: up;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.25)
+}
+
+@keyframes up {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.card:active {
+    box-shadow: 10px 10px 13px 0px rgba(0, 0, 0, 0.5);
+}
+
+/*адаптив*/
+
+@media screen and (min-width: 375px) and (max-width:576px) {
+    .container {
+        max-width: 343px;
+    }
+
+    .header-container {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .cross-history, .cross-history_text,.card-table  {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .card-big {
+        padding: 24px;
+    }
+
+    .cross-info {
+        padding: 0px
+    }
+}
